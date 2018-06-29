@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "DO NOT USE! User 03-1 instead"
+exit
+
+
 # Get the variables
 source 00-variables.sh
 
