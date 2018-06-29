@@ -42,12 +42,12 @@ export ICP_CLUSTER_NAME="mycluster.icp"
 export ICP_IP_RANGE="192.168.1.0/24"
 export ICP_SERVICE_IP_RANGE="192.168.0.1/24"
 
-export PUBLIC_IP=9.30.141.235
-export MASTER_IP=172.16.198.17
+export PUBLIC_IP=01.02.03.04
+export MASTER_IP=192.168.198.17
 
 # MASTER_IPS[0] should be the same master at MASTER_HOSTNAMES[0]
-export MASTER_IPS=("172.16.198.17" "172.16.217.218" "172.16.217.220" )
-export MASTER_HOSTNAMES=("icprhel1.fyre.ibm.com" "icprhel2.fyre.ibm.com" "icprhel3.fyre.ibm.com")
+export MASTER_IPS=("192.168.198.17" "192.168.217.218" "192.168.217.220" )
+export MASTER_HOSTNAMES=("icprhel1.mycluster.icp" "icprhel2.mycluster.icp" "icprhel3.mycluster.icp")
 export MASTER_HOSTNAMES_SHORT=("icprhel1" "icprhel2" "icprhel3")
 
 if [[ "${#MASTER_IPS[@]}" != "${#MASTER_HOSTNAMES[@]}" ]]; then
@@ -58,8 +58,8 @@ fi
 export NUM_MASTER=${#MASTER_IPS[@]}
 
 # WORKER_IPS[0] should be the same worker at WORKER_HOSTNAMES[0]
-export WORKER_IPS=("172.16.218.44" "172.16.218.55" "172.16.218.58")
-export WORKER_HOSTNAMES=("icprhel4.fyre.ibm.com" "icprhel5.fyre.ibm.com" "icprhel6.fyre.ibm.com")
+export WORKER_IPS=("192.168.218.44" "192.168.218.55" "192.168.218.58")
+export WORKER_HOSTNAMES=("icprhel4.mycluster.icp" "icprhel5.mycluster.icp" "icprhel6.mycluster.icp")
 export WORKER_HOSTNAMES_SHORT=("icprhel4" "icprhel5" "icprhel6")
 
 if [[ "${#WORKER_IPS[@]}" != "${#WORKER_HOSTNAMES[@]}" ]]; then
