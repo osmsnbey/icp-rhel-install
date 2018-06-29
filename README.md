@@ -1,6 +1,6 @@
 # ICP-ee bash install for RHEL
 
-This scripts are based on this recipe [ICP on RHEL]
+This scripts are based on this recipe [ICP on RHEL] also my colleque Nik has provided scripts for ICP community edition: [NIK-ICP-CE].
 
 
 A series of scripts to automate the installation of IBM Cloud Private-ee 2.1.0.3 on RHEL 7.5. 
@@ -45,3 +45,4 @@ Tasks on each of the workers are run in series (more wokers == more time), these
 
 
 [ICP on RHEL]: https://developer.ibm.com/recipes/tutorials/ibm-cloud-private-on-rhel/#r_step7
+[NIK-ICP-CE]: https://github.com/niklaushirt/icp_rhel_installl
