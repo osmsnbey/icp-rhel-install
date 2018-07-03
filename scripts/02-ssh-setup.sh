@@ -26,7 +26,7 @@ for ((i=1; i < $NUM_MASTER; i++)); do
   ssh -i ${SSH_KEY} ${SSH_USER}@${MASTER_HOSTNAMES[i]} sudo mkdir -p ~/.ssh
   scp -i ${SSH_KEY} ~/.ssh/master.id_rsa.pub ${SSH_USER}@${MASTER_HOSTNAMES[i]}:~/.ssh/master.id_rsa.pub
 
-  ssh -i ${SSH_KEY} ${SSH_USER}@${MASTER_HOSTNAMES[i]} 'cat ~/.ssh/master.id_rsa.pub | sudo tee ~/.ssh/authorized_keys | tee -a ~/.ssh/authorized_keys; echo "PermitRootLogin yes" | sudo tee -a /etc/ssh/sshd_config'
+  ssh -i ${SSH_KEY} ${SSH_USER}@${MASTER_HOSTNAMES[i]} 'cat ~/.ssh/master.id_rsa.pub | sudo tee ~/.ssh/authorized_keys | tee -a ~/.ssh/authorized_keys; echo "" && echo "PermitRootLogin yes" | sudo tee -a /etc/ssh/sshd_config'
   ssh -i ${SSH_KEY} ${SSH_USER}@${MASTER_HOSTNAMES[i]} sudo service sshd restart
 
 done
@@ -43,7 +43,7 @@ for ((i=0; i < $NUM_WORKERS; i++)); do
   ssh -i ${SSH_KEY} ${SSH_USER}@${WORKER_HOSTNAMES[i]} sudo mkdir -p ~/.ssh
   scp -i ${SSH_KEY} ~/.ssh/master.id_rsa.pub ${SSH_USER}@${WORKER_HOSTNAMES[i]}:~/.ssh/master.id_rsa.pub
 
-  ssh -i ${SSH_KEY} ${SSH_USER}@${WORKER_HOSTNAMES[i]} 'cat ~/.ssh/master.id_rsa.pub | sudo tee ~/.ssh/authorized_keys | tee -a ~/.ssh/authorized_keys; echo "PermitRootLogin yes" | sudo tee -a /etc/ssh/sshd_config'
+  ssh -i ${SSH_KEY} ${SSH_USER}@${WORKER_HOSTNAMES[i]} 'cat ~/.ssh/master.id_rsa.pub | sudo tee ~/.ssh/authorized_keys | tee -a ~/.ssh/authorized_keys; echo "" && echo "PermitRootLogin yes" | sudo tee -a /etc/ssh/sshd_config'
   ssh -i ${SSH_KEY} ${SSH_USER}@${WORKER_HOSTNAMES[i]} sudo service sshd restart
 
 done
@@ -60,7 +60,7 @@ for ((i=0; i < $NUM_PROXY; i++)); do
   ssh -i ${SSH_KEY} ${SSH_USER}@${PROXY_HOSTNAMES[i]} sudo mkdir -p ~/.ssh
   scp -i ${SSH_KEY} ~/.ssh/master.id_rsa.pub ${SSH_USER}@${PROXY_HOSTNAMES[i]}:~/.ssh/master.id_rsa.pub
 
-  ssh -i ${SSH_KEY} ${SSH_USER}@${PROXY_HOSTNAMES[i]} 'cat ~/.ssh/master.id_rsa.pub | sudo tee ~/.ssh/authorized_keys | tee -a ~/.ssh/authorized_keys; echo "PermitRootLogin yes" | sudo tee -a /etc/ssh/sshd_config'
+  ssh -i ${SSH_KEY} ${SSH_USER}@${PROXY_HOSTNAMES[i]} 'cat ~/.ssh/master.id_rsa.pub | sudo tee ~/.ssh/authorized_keys | tee -a ~/.ssh/authorized_keys; echo "" && echo "PermitRootLogin yes" | sudo tee -a /etc/ssh/sshd_config'
   ssh -i ${SSH_KEY} ${SSH_USER}@${PROXY_HOSTNAMES[i]} sudo service sshd restart
 
 done
@@ -77,7 +77,7 @@ for ((i=0; i < $NUM_MANAGE; i++)); do
   ssh -i ${SSH_KEY} ${SSH_USER}@${MANAGE_HOSTNAMES[i]} sudo mkdir -p ~/.ssh
   scp -i ${SSH_KEY} ~/.ssh/master.id_rsa.pub ${SSH_USER}@${MANAGE_HOSTNAMES[i]}:~/.ssh/master.id_rsa.pub
 
-  ssh -i ${SSH_KEY} ${SSH_USER}@${MANAGE_HOSTNAMES[i]} 'cat ~/.ssh/master.id_rsa.pub | sudo tee ~/.ssh/authorized_keys | tee -a ~/.ssh/authorized_keys; echo "PermitRootLogin yes" | sudo tee -a /etc/ssh/sshd_config'
+  ssh -i ${SSH_KEY} ${SSH_USER}@${MANAGE_HOSTNAMES[i]} 'cat ~/.ssh/master.id_rsa.pub | sudo tee ~/.ssh/authorized_keys | tee -a ~/.ssh/authorized_keys; echo "" && echo "PermitRootLogin yes" | sudo tee -a /etc/ssh/sshd_config'
   ssh -i ${SSH_KEY} ${SSH_USER}@${MANAGE_HOSTNAMES[i]} sudo service sshd restart
 
 done
